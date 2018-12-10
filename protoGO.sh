@@ -1,0 +1,1 @@
+protoc -I emoji/ emoji/emoji.proto --go_out=plugins=grpc:emoji
