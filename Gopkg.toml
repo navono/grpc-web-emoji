@@ -24,9 +24,14 @@
 #   go-tests = true
 #   unused-packages = true
 
-required = [
-    "github.com/golang/protobuf/protoc-gen-go",
-]
+
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  version = "1.2.0"
+
+[[constraint]]
+  branch = "master"
+  name = "golang.org/x/net"
 
 [[constraint]]
   name = "google.golang.org/grpc"
