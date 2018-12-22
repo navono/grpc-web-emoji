@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	proto "github.com/navono/gRPC-Web-emoji/emoji"
+	v1 "github.com/navono/gRPC-Web-emoji/pkg/api/v1"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -21,8 +21,8 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	c := proto.NewEmojiServiceClient(conn)
-	resp, err := c.Emojize(ctx, &proto.EmojizeRequest{
+	c := v1.NewEmojiServiceClient(conn)
+	resp, err := c.Emojize(ctx, &v1.EmojizeRequest{
 		Text: "I like :pizza: and :sushi:!",
 	})
 	if err != nil {

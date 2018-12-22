@@ -6,6 +6,7 @@ import (
 	"github.com/navono/gRPC-Web-emoji/pkg/service/v1"
 )
 
+// RunServer for run emoji server
 func RunServer() error {
 	ctx := context.Background()
 

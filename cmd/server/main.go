@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/navono/gRPC-Web-emoji/pkg/cmd"
 )
 

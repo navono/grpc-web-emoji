@@ -11,7 +11,8 @@ import (
 	"github.com/navono/gRPC-Web-emoji/pkg/api/v1"
 )
 
-func RunServer(ctx context.Context, v1API v1.EmojiServiceServer) {
+// RunServer for run gRPC service
+func RunServer(ctx context.Context, v1API v1.EmojiServiceServer) error {
 	// listen to TCP requests over port 9000
 	lis, err := net.Listen("tcp", ":9000")
 	if err != nil {
@@ -26,5 +27,8 @@ func RunServer(ctx context.Context, v1API v1.EmojiServiceServer) {
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
+		return err
 	}
+
+	return nil
 }
